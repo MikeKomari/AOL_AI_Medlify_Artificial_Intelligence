@@ -1,17 +1,15 @@
-import React from "react";
-import mainBg from "./assets/mainBG.png";
-import Navbar from "../components/nav/Navbar";
+import Hero from "../components/home/Hero";
+import Team from "../components/home/Team";
+import Layout from "../layout/Layout";
 function Home() {
   return (
-    <div
-      style={{
-        backgroundImage: `url(./assets/mainBG.png)`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        opacity: "0.4",
-      }}
-      className="min-h-screen w-full"
-    ></div>
+    <>
+      <Layout>
+        {/* <img src="assets/testHero.png" className="z-[999]" alt="" /> */}
+        <Hero />
+        <Team />
+      </Layout>
+    </>
   );
 }
 

@@ -1,20 +1,23 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
 import "./App.css";
 import Layout from "./layout/Layout";
 import Home from "./pages/Home";
-import CameraComponent from "./components/CameraComponent";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import StrokePage from "./pages/StrokePage";
+
+const router = createBrowserRouter([
+  { path: "/", element: <StrokePage /> },
+  // { path: "strokecheckup", element: <StrokePage /> },
+]);
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
     <>
-      <Layout />
+      <RouterProvider router={router} />
     </>
   );
 }
 
 export default App;
+
 // import Spline from "@splinetool/react-spline";
 // <Spline scene="https://prod.spline.design/PbuiihIc1IahRRgo/scene.splinecode" />

@@ -11,11 +11,10 @@ type LayoutProps = {
 function Layout({ children }: LayoutProps) {
   return (
     <>
-      <div className="min-w-full grid flex-col p-4 place-items-center grid-cols-1">
+      <div className="min-w-full">
         <Navbar />
-        <Home />
+        <main className="w-full">{children}</main>
         <Footer />
-        <CameraComponent />
       </div>
     </>
   );
