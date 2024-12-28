@@ -1,14 +1,19 @@
 import React from "react";
 import { motion } from "framer-motion";
-const CNN = () => {
+
+interface CNNProps {
+  onNavigateToCamera: () => void;
+}
+
+const CNN: React.FC<CNNProps> = ({ onNavigateToCamera }) => {
   return (
     <motion.div
       initial={{ opacity: 0, y: 100 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 1 }}
-      className="container rounded-xl h-[80vh] mt-20 bg-[#0e0b20]"
+      className="container rounded-xl h-[80vh] mt-20 bg-[#0e0b20] lg:h-fit"
     >
-      <div className="grid grid-cols-2 p-5 h-full">
+      <div className="grid grid-cols-2 p-5 h-full lg:grid-cols-1">
         <motion.div
           initial={{ opacity: 0, y: 100 }}
           animate={{ opacity: 1, y: 0 }}
@@ -77,7 +82,10 @@ const CNN = () => {
             transition={{ duration: 1.5 }}
             className="flex items-center justify-end cursor-pointer mt-5"
           >
-            <div className="px-8 py-2 rounded-full  border-2 text-custom-purple  bg-custom-white">
+            <div
+              onClick={onNavigateToCamera}
+              className="px-8 py-2 rounded-full  border-2 text-custom-purple  bg-custom-white"
+            >
               Get Started
             </div>
           </motion.div>

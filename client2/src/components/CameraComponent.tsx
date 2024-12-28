@@ -41,6 +41,7 @@ const CameraComponent: React.FC = () => {
   }, []);
 
   const takePicture = () => {
+    setApiResponse(null);
     if (videoRef.current && canvasRef.current) {
       const canvas = canvasRef.current;
       const context = canvas.getContext("2d");
@@ -56,6 +57,7 @@ const CameraComponent: React.FC = () => {
   };
 
   const handleFileUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setApiResponse(null);
     const file = event.target.files?.[0];
     if (file && file.type === "image/jpeg") {
       const reader = new FileReader();

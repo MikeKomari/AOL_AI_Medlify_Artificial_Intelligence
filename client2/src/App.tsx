@@ -5,8 +5,8 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import StrokePage from "./pages/StrokePage";
 
 const router = createBrowserRouter([
-  { path: "/", element: <StrokePage /> },
-  // { path: "strokecheckup", element: <StrokePage /> },
+  { path: "/", element: <Home /> },
+  { path: "/strokecheckup", element: <StrokePage /> },
 ]);
 
 function App() {

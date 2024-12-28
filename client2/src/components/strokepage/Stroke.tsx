@@ -7,9 +7,9 @@ const Stroke = () => {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 1 }}
-      className="container rounded-xl h-[80vh] mt-20"
+      className="container rounded-xl h-[80vh] mt-20 lg:h-fit"
     >
-      <div className="grid grid-cols-2 p-5 h-full mt-10">
+      <div className="grid grid-cols-2 p-5 h-full mt-10 lg:grid-cols-1">
         <div className="col-span-1 py-10 flex flex-col justify-between">
           <motion.h1
             initial={{ opacity: 0, y: 100 }}
