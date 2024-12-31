@@ -41,7 +41,8 @@ const CameraComponent: React.FC = () => {
 	}, []);
 
 	const takePicture = (): void => {
-		setApiResponse(null);
+		console.log("UJ");
+		// setApiResponse(null);
 		if (videoRef.current && canvasRef.current) {
 			const canvas = canvasRef.current;
 			const context = canvas.getContext("2d");
@@ -57,7 +58,7 @@ const CameraComponent: React.FC = () => {
 	};
 
 	const handleFileUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
-		setApiResponse(null);
+		// setApiResponse(null);
 		const file = event.target.files?.[0];
 		if (file && file.type === "image/jpeg") {
 			const reader = new FileReader();
@@ -73,13 +74,13 @@ const CameraComponent: React.FC = () => {
 	};
 
 	const handleSubmit = async () => {
+		console.log("AOKWAOKWOKA");
 		if (!imageDataUrl) {
 			setErrorMessage(
 				"No image captured. Please take a picture or upload an Image"
 			);
 			return;
 		}
-		console.log("AOKWAOKWOKA");
 		try {
 			setIsSubmitting(true);
 			setErrorMessage("");
@@ -149,11 +150,12 @@ const CameraComponent: React.FC = () => {
 								Take Picture Button
 							</p>
 							<button
-								onClick={takePicture}
+								onClick={() => takePicture()}
 								className="my-5 rounded-full border-2 text-custom-white px-8 py-2 bg-custom-purple"
 							>
 								Take Picture
 							</button>
+							<canvas ref={canvasRef} style={{ display: "none" }}></canvas>
 						</div>
 					)}
 
